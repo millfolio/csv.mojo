@@ -1,0 +1,19 @@
+[workspace]
+name = "csv"
+version = "0.1.0"
+authors = ["Marius S <marius@seritan.net>"]
+description = "A from-scratch RFC-4180 CSV parser in Mojo (quoted fields, embedded commas/newlines, escaped quotes). UTF-8-safe."
+# Org nightly — matches the other millrace Mojo libs so it resolves via `-I`
+# against the same toolchain.
+channels = [
+    "https://conda.modular.com/max-nightly",
+    "conda-forge",
+]
+platforms = ["osx-arm64"]
+
+[dependencies]
+mojo = "==1.0.0b2.dev2026060706"
+
+[tasks]
+# Pure Mojo, no FFI — consumers just `-I ../csv.mojo/src`.
+test = { cmd = "mkdir -p build && mojo build src/csv_test.mojo -I src -o build/csv-test && ./build/csv-test" }
