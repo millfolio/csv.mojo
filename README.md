@@ -1,6 +1,6 @@
 # csv.mojo
 
-> Part of [**millrace**](https://millrace.me) — local-first AI on Apple Silicon.
+> Part of [**millfolio**](https://millfolio.app) — local-first AI on Apple Silicon.
 
 A small, from-scratch **RFC-4180 CSV parser** in Mojo. One UTF-8-safe state
 machine over codepoints — no dependencies.
@@ -27,7 +27,7 @@ def main() raises:
         ...
 ```
 
-Consume it like the other millrace Mojo libs — `-I ../csv.mojo/src` (no FFI, no
+Consume it like the other millfolio Mojo libs — `-I ../csv.mojo/src` (no FFI, no
 link flags).
 
 ## API
@@ -43,5 +43,5 @@ link flags).
 pixi run test   # RFC-4180 conformance cases
 ```
 
-Extracted from [dacular](https://github.com/millrace/dacular)'s vault readers so
+Extracted from [dacular](https://github.com/millfolio/dacular)'s vault readers so
 any project can reuse it.
