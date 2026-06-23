@@ -16,4 +16,4 @@ mojo = "==1.0.0b3.dev2026062206"
 
 [tasks]
 # Pure Mojo, no FFI — consumers just `-I ../csv.mojo/src`.
-test = { cmd = "mkdir -p build && mojo build src/csv_test.mojo -I src -o build/csv-test && ./build/csv-test" }
+test = { cmd = "mkdir -p build && mojo build test/csv_test.mojo -I src -o build/csv-test && ./build/csv-test" }
