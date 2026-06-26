@@ -1,5 +1,7 @@
 # csv.mojo
 
+> 💬 **Community:** questions, ideas, and show-and-tell live in [GitHub Discussions](https://github.com/millfolio/millfolio/discussions).
+
 > Part of [**millfolio**](https://millfolio.app) — local-first AI on Apple Silicon.
 
 A small, from-scratch **RFC-4180 CSV parser** in Mojo. One UTF-8-safe state
