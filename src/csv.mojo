@@ -31,23 +31,23 @@ def parse(text: String) raises -> List[List[String]]:
 
     var row = List[String]()
     var field = String("")
-    var field_quoted = False     # was the current field opened with a quote?
+    var field_quoted = False  # was the current field opened with a quote?
     var in_quotes = False
-    var pending_quote = False    # saw a `"` inside quotes — escape or close?
+    var pending_quote = False  # saw a `"` inside quotes — escape or close?
 
     for cp in text.codepoint_slices():
         var ch = String(cp)
         if pending_quote:
             pending_quote = False
             if ch == '"':
-                field += '"'      # "" -> literal quote, stay in the quoted field
+                field += '"'  # "" -> literal quote, stay in the quoted field
                 continue
-            in_quotes = False     # the quote closed the field; fall through to ch
+            in_quotes = False  # the quote closed the field; fall through to ch
         if in_quotes:
             if ch == '"':
                 pending_quote = True
             else:
-                field += ch       # includes newlines inside quotes
+                field += ch  # includes newlines inside quotes
             continue
         # ── unquoted ──
         if ch == '"':
@@ -55,14 +55,17 @@ def parse(text: String) raises -> List[List[String]]:
             field_quoted = True
         elif ch == ",":
             row.append(field if field_quoted else String(field.strip()))
-            field = String(""); field_quoted = False
+            field = String("")
+            field_quoted = False
         elif ch == "\n":
             row.append(field if field_quoted else String(field.strip()))
             if not _row_all_empty(row):
                 rows.append(row.copy())
-            row = List[String](); field = String(""); field_quoted = False
+            row = List[String]()
+            field = String("")
+            field_quoted = False
         elif ch == "\r":
-            pass                  # skip CR (CRLF handled by the LF case)
+            pass  # skip CR (CRLF handled by the LF case)
         else:
             field += ch
 
