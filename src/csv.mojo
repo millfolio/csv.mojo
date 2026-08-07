@@ -1,4 +1,4 @@
-"""csv — a from-scratch RFC-4180 CSV parser in Mojo.
+"""`csv` — a from-scratch RFC-4180 CSV parser in Mojo.
 
 A single UTF-8-safe state machine over codepoints. Handles `"`-quoted fields,
 embedded commas, embedded newlines inside quotes, and `""` escaped quotes.
