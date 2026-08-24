@@ -1,5 +1,5 @@
 name = "csv"
-version = "0.1.0"
+version = "0.1.1"
 description = "Read files in the format Comma Separated Values"
 # other books this one depends on; omit if none
 books = []

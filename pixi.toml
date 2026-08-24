@@ -1,10 +1,11 @@
 [workspace]
 name = "csv"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Marius S <marius@seritan.net>"]
 description = "A from-scratch RFC-4180 CSV parser in Mojo (quoted fields, embedded commas/newlines, escaped quotes). UTF-8-safe."
 # Org nightly — matches the other millfolio Mojo libs so it resolves via `-I`
 # against the same toolchain.
+preview = ["pixi-build"]
 channels = [
     "https://conda.modular.com/max-nightly",
     "conda-forge",
@@ -17,3 +18,24 @@ mojo = "==1.0.0"
 [tasks]
 # Pure Mojo, no FFI — consumers just `-I ../csv.mojo/src`.
 test = { cmd = "mkdir -p build && mojo build test/csv_test.mojo -I src -o build/csv-test && ./build/csv-test" }
+
+# ── pixi-build: consumable as a pixi source dependency ──────────────────────
+[package]
+name = "csv"
+version = "0.1.1"
+
+[package.build]
+backend = { name = "pixi-build-mojo", version = "0.*" }
+
+[package.build.config.pkg]
+path = "src/csv"
+name = "csv"
+
+[package.host-dependencies]
+mojo-compiler = "==1.0.0"
+
+[package.build-dependencies]
+mojo-compiler = "==1.0.0"
+
+[package.run-dependencies]
+mojo-compiler = "==1.0.0"
