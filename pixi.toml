@@ -1,6 +1,6 @@
 [workspace]
 name = "csv"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Marius S <marius@seritan.net>"]
 description = "A from-scratch RFC-4180 CSV parser in Mojo (quoted fields, embedded commas/newlines, escaped quotes). UTF-8-safe."
 # Org nightly — matches the other millfolio Mojo libs so it resolves via `-I`
@@ -22,7 +22,7 @@ test = { cmd = "mkdir -p build && mojo build test/csv_test.mojo -I src -o build/
 # ── pixi-build: consumable as a pixi source dependency ──────────────────────
 [package]
 name = "csv"
-version = "0.1.1"
+version = "0.1.2"
 
 [package.build]
 backend = { name = "pixi-build-mojo", version = "0.*" }
