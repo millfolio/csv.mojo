@@ -1,5 +1,7 @@
 # csv.mojo
 
+[![mojoshelf](https://mojoshelf.org/badge/csv.svg)](https://mojoshelf.org/tins/csv) [![mojo nightly](https://mojoshelf.org/badge/csv/nightly.svg)](https://mojoshelf.org/tins/csv)
+
 > 💬 **Community:** questions, ideas, and show-and-tell live in [GitHub Discussions](https://github.com/millfolio/millfolio/discussions).
 
 > Part of [**millfolio**](https://millfolio.app) — local-first AI on Apple Silicon.
@@ -31,6 +33,18 @@ def main() raises:
 
 Consume it like the other millfolio Mojo libs — `-I ../csv.mojo/src` (no FFI, no
 link flags).
+
+## Install as a mojoshelf tin
+
+Published on [mojoshelf](https://mojoshelf.org/tins/csv) as `csv`:
+
+```sh
+pixi shelf add csv     # pixi mode (git source dependency)
+shelf add csv          # or as a git submodule
+```
+
+Maintainers release new versions with `shelf publish` from the repo root
+(see [getting started](https://mojoshelf.org/getting-started)).
 
 ## API
 
